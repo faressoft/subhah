@@ -7,14 +7,29 @@
  */
 
 var keypress = require('keypress')
-  , counter  = 0;
+  , chalk    = require('chalk');
+
+var counter  = 0;
 
 /**
  * Print Usage Instructions
  */
 
-process.stdout.write('\x1B[2J\x1B[0f\u001b[0;0H');
-console.log('Press ENTER to increment the counter and BACKSPACE to reset it');
+/**
+ * - Clearing the window
+ * - Print the usage instructions
+ * - Print the counter
+ * 
+ */
+function render() {
+
+  process.stdout.write('\x1B[2J\x1B[0f\u001b[0;0H');
+  console.log('---------------------------------------------------------------');
+  console.log('Press', chalk.magenta('ENTER'), 'to increment the counter and', chalk.magenta('BACKSPACE'), 'to reset it');
+  console.log('---------------------------------------------------------------');
+  console.log(counter);
+
+}
 
 /**
  * When the user press a key
@@ -25,20 +40,22 @@ process.stdin.on('keypress', function (ch, key) {
   // The enter key
   if (key.name == 'return') {
 
-    // Clear the window
-    process.stdout.write('\x1B[2J\x1B[0f\u001b[0;0H');
-    // Increment the counter and print it
-    console.log(++counter);
+    // Increment the counter
+    counter++;
+
+    // Render the output
+    render();
 
   }
 
   // The backspace key
   if (key.name == 'backspace') {
 
-    // Clear the window
-    process.stdout.write('\x1B[2J\x1B[0f\u001b[0;0H');
-    // Reset the counter and print it
-    console.log(counter = 0);
+    // Reset the counter
+    counter = 0;
+
+    // Render the output
+    render();
 
   }
 
@@ -49,6 +66,7 @@ process.stdin.on('keypress', function (ch, key) {
 
 });
 
+render();
 keypress(process.stdin);
 process.stdin.setRawMode(true);
 process.stdin.resume();
