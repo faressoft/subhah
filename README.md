@@ -5,6 +5,8 @@
 
 A simple subhah counter for muslims geeks to be used in the terminal. This is just a simple dummy script that I created for personal use at first, I would like to share it with you.
 
+![Screenshot](/screenshot.png?raw=true)
+
 # Installation
 
 To use the Subhah from you command line interface, you have to:
