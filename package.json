@@ -1,0 +1,15 @@
+{
+  "name": "subhah",
+  "version": "1.0.0",
+  "description": "A simple subhah counter for geeks muslims to be used in the terminal",
+  "main": "bin/index.js",
+  "bin": {
+    "subhah": "bin/index.js"
+  },
+  "keywords": ["subhah", "misbahah", "sub7ah", "misba7a", "muslim", "islam", "religion", "azkhar"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "keypress": "^0.2.1"
+  }
+}
