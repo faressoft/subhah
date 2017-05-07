@@ -9,11 +9,17 @@
 var keypress = require('keypress')
   , counter  = 0;
 
-keypress(process.stdin);
+/**
+ * Print Usage Instructions
+ */
+
+process.stdout.write('\x1B[2J\x1B[0f\u001b[0;0H');
+console.log('Press ENTER to increment the counter and BACKSPACE to reset it');
 
 /**
  * When the user press a key
  */
+
 process.stdin.on('keypress', function (ch, key) {
 
   // The enter key
@@ -43,5 +49,6 @@ process.stdin.on('keypress', function (ch, key) {
 
 });
 
+keypress(process.stdin);
 process.stdin.setRawMode(true);
 process.stdin.resume();
