@@ -6,6 +6,10 @@
   "bin": {
     "subhah": "bin/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faressoft/subhah"
+  },
   "keywords": [
     "subhah",
     "misbahah",
