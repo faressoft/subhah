@@ -19,7 +19,6 @@ var counter  = 0;
  * - Clearing the window
  * - Print the usage instructions
  * - Print the counter
- * 
  */
 function render() {
 
@@ -34,7 +33,6 @@ function render() {
 /**
  * When the user press a key
  */
-
 process.stdin.on('keypress', function (ch, key) {
 
   // The enter key
